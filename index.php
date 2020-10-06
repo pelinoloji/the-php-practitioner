@@ -1,10 +1,10 @@
 <?php
 
 require 'task.php';
-
+require 'db/Connector.php';
 require 'functions.php';
 
-$pdo = connectDB();
+$pdo = Connector::make();
 
 $tasks = fetchAllTasks($pdo);
 
