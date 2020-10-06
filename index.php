@@ -1,11 +1,10 @@
 <?php
 
 require 'task.php';
-require 'db/Connector.php';
 require 'functions.php';
+$query = require 'boot.php';
 
-$pdo = Connector::make();
 
-$tasks = fetchAllTasks($pdo);
+$tasks = $query->selectAll('todos', 'Task'); //'Task' comes from class "Task"
 
 require 'index.view.php';
