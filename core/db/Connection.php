@@ -1,12 +1,10 @@
 <?php
 
-
-class Connector
+class Connection
 {
-  public static function make($config) //make connection
+  public static function make($config)
   {
     try {
-
       return new PDO(
         $config['connection'] . ';dbname=' . $config['name'],
         $config['username'],
@@ -18,11 +16,3 @@ class Connector
     }
   }
 }
-
-
-//$pdo = Connector::make();
-
-// $connector = new Connector(); //static method
-// $connector->make();
-
-// Connector::make(); //static method
