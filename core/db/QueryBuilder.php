@@ -32,6 +32,7 @@ class QueryBuilder
       ':' . implode(', :', array_keys($parameters))
       //array_map(function ($parameters) {return ":{parameters}";}, array_keys($parameters))
     );
+
     try {
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
